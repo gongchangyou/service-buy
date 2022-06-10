@@ -52,6 +52,7 @@ public class PayController {
 
     }
 
+    @GlobalTransactional(timeoutMills = 300000, name = "dubbo-demo-tx")
     @GetMapping(value = "/transaction/failed")
     public Map payFailed(
             @RequestParam(name = "count", required = false) Integer count
